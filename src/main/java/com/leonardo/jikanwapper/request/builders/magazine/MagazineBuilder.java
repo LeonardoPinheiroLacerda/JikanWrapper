@@ -6,10 +6,13 @@ import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;
 import com.leonardo.jikanwapper.request.query_enums.SearchQuerySort;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
+import lombok.Getter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+
+@Getter
 public class MagazineBuilder {
 
     private String url = JikanConstants.HOST + "/magazines";

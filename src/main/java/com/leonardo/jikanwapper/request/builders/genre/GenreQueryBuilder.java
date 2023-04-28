@@ -5,6 +5,7 @@ import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.query_enums.GenreQueryFilter;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.HashSet;
@@ -12,6 +13,7 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
+@Getter
 public class GenreQueryBuilder {
 
     private final String url;
