@@ -7,8 +7,8 @@ import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -16,9 +16,9 @@ public class GenreQueryBuilder {
 
     private final String url;
 
-    private List<String> queries = new ArrayList();
+    private Set<String> queries = new HashSet<>();
 
-    public GenreQueryBuilder addQueryParameter(GenreQueryFilter queryParameter) {
+    public GenreQueryBuilder filter(GenreQueryFilter queryParameter) {
         this.queries.add(queryParameter.getQuery());
         return this;
     }

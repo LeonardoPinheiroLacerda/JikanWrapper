@@ -1,10 +1,10 @@
 package com.leonardo.jikanwapper.util;
 
-import java.util.List;
+import java.util.Set;
 
 public class QueryParameterBuilder {
 
-    public static String build(List<String> queries) {
+    public static String build(Set<String> queries) {
         StringBuilder queriesStr = new StringBuilder("?");
         for(String query : queries) {
 

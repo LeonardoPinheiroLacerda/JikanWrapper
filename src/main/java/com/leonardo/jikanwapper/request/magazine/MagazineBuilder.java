@@ -7,41 +7,37 @@ import com.leonardo.jikanwapper.request.queryParametersEnums.MagazinesQueryOrder
 import com.leonardo.jikanwapper.request.queryParametersEnums.SearchQuerySort;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MagazineBuilder {
 
     private String url = JikanConstants.HOST + "/magazines";
 
-    private List<String> queries = new ArrayList();
+    private Set<String> queries = new HashSet<>();
 
-    public MagazineBuilder addPageQueryParameter(Integer page) {
+    public MagazineBuilder page(Integer page) {
         queries.add("page=" + page);
         return this;
     }
 
-    public MagazineBuilder addLimitQueryParameter(Integer limit) {
+    public MagazineBuilder limit(Integer limit) {
         queries.add("limit=" + limit);
         return this;
     }
 
-    public MagazineBuilder addQQueryParameter(String q) {
+    public MagazineBuilder query(String q) {
         queries.add("q=" + q);
         return this;
     }
 
-    public MagazineBuilder addLetterQueryParameter(Character letter) {
+    public MagazineBuilder letter(Character letter) {
         queries.add("letter=" + letter);
         return this;
     }
 
-    public MagazineBuilder addQueryParameter(MagazinesQueryOrderBy magazinesQueryOrderBy){
+    public MagazineBuilder orderBy(MagazinesQueryOrderBy magazinesQueryOrderBy, SearchQuerySort searchQuerySort){
         queries.add(magazinesQueryOrderBy.getQuery());
-        return this;
-    }
-
-    public MagazineBuilder addQueryParameter(SearchQuerySort searchQuerySort){
         queries.add(searchQuerySort.getQuery());
         return this;
     }
