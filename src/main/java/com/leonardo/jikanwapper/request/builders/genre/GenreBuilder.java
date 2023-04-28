@@ -1,4 +1,4 @@
-package com.leonardo.jikanwapper.request.genre;
+package com.leonardo.jikanwapper.request.builders.genre;
 
 import com.leonardo.jikanwapper.JikanConstants;
 

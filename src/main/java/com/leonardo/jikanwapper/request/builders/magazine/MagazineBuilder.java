@@ -1,10 +1,10 @@
-package com.leonardo.jikanwapper.request.magazine;
+package com.leonardo.jikanwapper.request.builders.magazine;
 
 import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.maganize.MagazineData;
 import com.leonardo.jikanwapper.request.Request;
-import com.leonardo.jikanwapper.request.queryParametersEnums.MagazinesQueryOrderBy;
-import com.leonardo.jikanwapper.request.queryParametersEnums.SearchQuerySort;
+import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;
+import com.leonardo.jikanwapper.request.query_enums.SearchQuerySort;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 
 import java.util.HashSet;

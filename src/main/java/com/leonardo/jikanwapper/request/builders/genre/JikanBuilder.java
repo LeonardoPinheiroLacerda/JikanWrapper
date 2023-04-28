@@ -1,7 +1,6 @@
-package com.leonardo.jikanwapper.request;
+package com.leonardo.jikanwapper.request.builders.genre;
 
-import com.leonardo.jikanwapper.request.genre.GenreBuilder;
-import com.leonardo.jikanwapper.request.magazine.MagazineBuilder;
+import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
 
 public class JikanBuilder {
 

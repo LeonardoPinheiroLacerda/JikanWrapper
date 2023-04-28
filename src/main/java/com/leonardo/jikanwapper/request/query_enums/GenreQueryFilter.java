@@ -1,4 +1,4 @@
-package com.leonardo.jikanwapper.request.queryParametersEnums;
+package com.leonardo.jikanwapper.request.query_enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,8 +1,8 @@
-package com.leonardo.jikanwapper.request.genre;
+package com.leonardo.jikanwapper.request.builders.genre;
 
 import com.leonardo.jikanwapper.records.genres.GenreData;
 import com.leonardo.jikanwapper.request.Request;
-import com.leonardo.jikanwapper.request.queryParametersEnums.GenreQueryFilter;
+import com.leonardo.jikanwapper.request.query_enums.GenreQueryFilter;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
