@@ -14,6 +14,6 @@ public class QueryParameterBuilder {
             queriesStr.append(query);
 
         }
-        return queriesStr.toString();
+        return queriesStr.toString().equals("?") ? "" : queriesStr.toString();
     }
 }
