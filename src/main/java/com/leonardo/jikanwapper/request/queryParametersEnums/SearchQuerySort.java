@@ -5,12 +5,10 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum GenreQueryFilter {
+public enum SearchQuerySort {
 
-    GENRES ("filter=genres"),
-    EXPLICIT_GENRES ("filter=explicit_genres"),
-    THEMES ("filter=themes"),
-    DEMOGRAPHICS ("filter=demographics");
+    ASC ("sort=asc"),
+    DESC ("sort=desc");
 
     private final String query;
 

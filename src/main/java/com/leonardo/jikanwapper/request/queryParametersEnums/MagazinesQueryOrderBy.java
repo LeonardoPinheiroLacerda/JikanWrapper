@@ -5,13 +5,11 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum GenreQueryFilter {
+public enum MagazinesQueryOrderBy {
 
-    GENRES ("filter=genres"),
-    EXPLICIT_GENRES ("filter=explicit_genres"),
-    THEMES ("filter=themes"),
-    DEMOGRAPHICS ("filter=demographics");
+    MAL_ID ("order_by=mal_id"),
+    NAME ("order_by=name"),
+    COUNT ("order_by=count");
 
     private final String query;
-
 }
