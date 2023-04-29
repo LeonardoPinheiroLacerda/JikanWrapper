@@ -1,5 +1,6 @@
 package com.leonardo.jikanwapper.request.builders.magazine;
 
+import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.maganize.MagazineData;
 import com.leonardo.jikanwapper.request.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
@@ -89,7 +90,7 @@ class MagazineBuilderTest {
     void build() {
 
         //given
-        String expected = "https://api.jikan.moe/v4/magazines";
+        String expected = JikanConstants.HOST + "/magazines";
 
         //when
         MagazineBuilder magazineBuilder = JikanBuilder

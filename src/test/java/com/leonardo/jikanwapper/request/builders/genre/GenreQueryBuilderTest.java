@@ -1,5 +1,6 @@
 package com.leonardo.jikanwapper.request.builders.genre;
 
+import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.genres.GenreData;
 import com.leonardo.jikanwapper.request.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
@@ -17,7 +18,7 @@ class GenreQueryBuilderTest {
     void buildTest() {
 
         //given
-        String expected = "https://api.jikan.moe/v4/genres/anime";
+        String expected = JikanConstants.HOST + "/genres/anime";
 
         //when
         GenreQueryBuilder genreQueryBuilder = JikanBuilder.genre().anime();

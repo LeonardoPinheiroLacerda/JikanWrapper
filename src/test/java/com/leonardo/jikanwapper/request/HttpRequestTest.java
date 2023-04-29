@@ -1,5 +1,6 @@
 package com.leonardo.jikanwapper.request;
 
+import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.exceptions.JikanRequestException;
 import com.leonardo.jikanwapper.records.genres.GenreData;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +15,7 @@ class HttpRequestTest {
     void test() {
 
         //given
-        final String url = "https://api.jikan.moe/v4/genres/anime";
+        final String url = JikanConstants.HOST + "/genres/anime";
 
         //when
         GenreData actual = HttpRequest.get(url, GenreData.class);
@@ -29,7 +30,7 @@ class HttpRequestTest {
     void test1() {
 
         //given
-        final String url = "https://api.jikan.moe/v4/invalid-url";
+        final String url = JikanConstants.HOST + "/invalid-url";
 
         //then
         assertThrows(JikanRequestException.class, () -> HttpRequest.get(url, GenreData.class));

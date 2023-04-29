@@ -1,5 +1,6 @@
 package com.leonardo.jikanwapper.request.builders.genre;
 
+import com.leonardo.jikanwapper.JikanConstants;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ class GenreBuilderTest {
     void anime() {
 
         //given
-        String expected = "https://api.jikan.moe/v4/genres/anime";
+        String expected = JikanConstants.HOST + "/genres/anime";
 
         //when
         GenreBuilder genreBuilder = new GenreBuilder();
@@ -30,7 +31,7 @@ class GenreBuilderTest {
     void manga() {
 
         //given
-        String expected = "https://api.jikan.moe/v4/genres/manga";
+        String expected = JikanConstants.HOST + "/genres/manga";
 
         //when
         GenreBuilder genreBuilder = new GenreBuilder();
