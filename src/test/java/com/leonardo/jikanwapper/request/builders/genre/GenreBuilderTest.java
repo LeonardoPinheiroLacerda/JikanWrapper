@@ -1,6 +1,7 @@
 package com.leonardo.jikanwapper.request.builders.genre;
 
 import com.leonardo.jikanwapper.JikanConstants;
+import com.leonardo.jikanwapper.request.builders.JikanBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,7 @@ class GenreBuilderTest {
         String expected = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/anime";
 
         //when
-        GenreBuilder genreBuilder = new GenreBuilder();
+        GenreBuilder genreBuilder = JikanBuilder.genre();
 
         GenreQueryBuilder genreQueryBuilder = genreBuilder.anime();
 
@@ -34,7 +35,7 @@ class GenreBuilderTest {
         String expected = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/manga";
 
         //when
-        GenreBuilder genreBuilder = new GenreBuilder();
+        GenreBuilder genreBuilder = JikanBuilder.genre();
 
         GenreQueryBuilder genreQueryBuilder = genreBuilder.manga();
 

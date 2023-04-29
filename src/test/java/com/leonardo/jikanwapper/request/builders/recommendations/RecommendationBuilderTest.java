@@ -1,6 +1,7 @@
 package com.leonardo.jikanwapper.request.builders.recommendations;
 
 import com.leonardo.jikanwapper.JikanConstants;
+import com.leonardo.jikanwapper.request.builders.JikanBuilder;
 import com.leonardo.jikanwapper.request.builders.genre.GenreBuilder;
 import com.leonardo.jikanwapper.request.builders.genre.GenreQueryBuilder;
 import org.junit.jupiter.api.DisplayName;
@@ -18,7 +19,7 @@ class RecommendationBuilderTest {
         String expected = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "/anime";
 
         //when
-        RecommendationBuilder recommendationBuilder = new RecommendationBuilder();
+        RecommendationBuilder recommendationBuilder = JikanBuilder.recommendations();
 
         RecommendationQueryBuilder recommendationQueryBuilder = recommendationBuilder.anime();
 
@@ -35,7 +36,7 @@ class RecommendationBuilderTest {
         String expected = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "/manga";
 
         //when
-        RecommendationBuilder recommendationBuilder = new RecommendationBuilder();
+        RecommendationBuilder recommendationBuilder = JikanBuilder.recommendations();
 
         RecommendationQueryBuilder recommendationQueryBuilder = recommendationBuilder.manga();
 

@@ -1,26 +1,19 @@
 package com.leonardo.jikanwapper.request.builders.genre;
 
 import com.leonardo.jikanwapper.records.genres.GenreData;
-import com.leonardo.jikanwapper.request.RequestBuilder;
-import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
+import com.leonardo.jikanwapper.request.RequestBuilder;
+import com.leonardo.jikanwapper.request.UrlBuilder;
 import com.leonardo.jikanwapper.request.query_enums.GenreQueryFilter;
+import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
 
-@RequiredArgsConstructor
-@AllArgsConstructor
-@Getter
-public class GenreQueryBuilder implements RequestBuilder<GenreData> {
+public class GenreQueryBuilder extends UrlBuilder implements RequestBuilder<GenreData> {
 
-    private final String url;
-
-    private Set<QueryParameter> queries = new HashSet<>();
+    public GenreQueryBuilder(String url) {
+        super(url);
+    }
 
     public GenreQueryBuilder filter(GenreQueryFilter queryParameter) {
         this.queries.add(new QueryParameter(queryParameter.getQuery()));

@@ -1,10 +1,12 @@
 package com.leonardo.jikanwapper.request.builders.recommendations;
 
-import com.leonardo.jikanwapper.JikanConstants;
+import com.leonardo.jikanwapper.request.UrlBuilder;
 
-public class RecommendationBuilder {
+public class RecommendationBuilder extends UrlBuilder {
 
-    private String url = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "";
+    public RecommendationBuilder(String url) {
+        super(url);
+    }
 
     public RecommendationQueryBuilder anime() {
         return new RecommendationQueryBuilder(url + "/anime");

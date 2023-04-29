@@ -1,10 +1,12 @@
 package com.leonardo.jikanwapper.request.builders.genre;
 
-import com.leonardo.jikanwapper.JikanConstants;
+import com.leonardo.jikanwapper.request.UrlBuilder;
 
-public class GenreBuilder {
+public class GenreBuilder extends UrlBuilder {
 
-    private String url = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "";
+    public GenreBuilder(String url) {
+        super(url);
+    }
 
     public GenreQueryBuilder anime() {
         return new GenreQueryBuilder(url + "/anime");

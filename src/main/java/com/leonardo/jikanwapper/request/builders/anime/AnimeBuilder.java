@@ -1,10 +1,12 @@
 package com.leonardo.jikanwapper.request.builders.anime;
 
-import com.leonardo.jikanwapper.JikanConstants;
+import com.leonardo.jikanwapper.request.UrlBuilder;
 
-public class AnimeBuilder {
+public class AnimeBuilder extends UrlBuilder {
 
-    private String url = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT;
+    public AnimeBuilder(String url) {
+        super(url);
+    }
 
     public AnimeIdBuilder id(Integer id){
         return new AnimeIdBuilder(url + "/" + id);

@@ -1,25 +1,20 @@
 package com.leonardo.jikanwapper.request.builders.magazine;
 
-import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.maganize.MagazineData;
-import com.leonardo.jikanwapper.request.RequestBuilder;
-import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
+import com.leonardo.jikanwapper.request.RequestBuilder;
+import com.leonardo.jikanwapper.request.UrlBuilder;
 import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;
 import com.leonardo.jikanwapper.request.query_enums.SearchQuerySort;
+import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;
-import lombok.Getter;
-
-import java.util.HashSet;
-import java.util.Set;
 
 
-@Getter
-public class MagazineBuilder implements RequestBuilder<MagazineData> {
+public class MagazineBuilder extends UrlBuilder implements RequestBuilder<MagazineData> {
 
-    private String url = JikanConstants.HOST + JikanConstants.MAGAZINE_ENDPOINT;
-
-    private Set<QueryParameter> queries = new HashSet<>();
+    public MagazineBuilder(String url) {
+        super(url);
+    }
 
     public MagazineBuilder page(Integer page) {
         queries.add(new QueryParameter("page", page));
@@ -41,7 +36,7 @@ public class MagazineBuilder implements RequestBuilder<MagazineData> {
         return this;
     }
 
-    public MagazineBuilder orderBy(MagazinesQueryOrderBy magazinesQueryOrderBy, SearchQuerySort searchQuerySort){
+    public MagazineBuilder orderBy(MagazinesQueryOrderBy magazinesQueryOrderBy, SearchQuerySort searchQuerySort) {
         queries.add(new QueryParameter(magazinesQueryOrderBy.getQuery()));
         queries.add(new QueryParameter(searchQuerySort.getQuery()));
         return this;
