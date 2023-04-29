@@ -1,6 +1,5 @@
 package com.leonardo.jikanwapper.util;
 
-import com.leonardo.jikanwapper.request.QueryParameter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

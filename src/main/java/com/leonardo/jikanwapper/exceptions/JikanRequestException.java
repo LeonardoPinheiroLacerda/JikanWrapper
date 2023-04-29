@@ -6,4 +6,8 @@ public class JikanRequestException extends RuntimeException{
         super(message);
     }
 
+    public JikanRequestException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
 }

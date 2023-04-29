@@ -2,6 +2,7 @@ package com.leonardo.jikanwapper.request.builders;
 
 import com.leonardo.jikanwapper.request.builders.genre.GenreBuilder;
 import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
+import com.leonardo.jikanwapper.request.builders.recommendations.RecommendationBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -24,6 +25,16 @@ class JikanBuilderTest {
     void magazine() {
         //when
         MagazineBuilder builder = JikanBuilder.magazine();
+
+        //then
+        assertNotNull(builder);
+    }
+
+    @Test
+    @DisplayName("Should return a RecommendationBuilder")
+    void recommendation() {
+        //when
+        RecommendationBuilder builder = JikanBuilder.recommendations();
 
         //then
         assertNotNull(builder);

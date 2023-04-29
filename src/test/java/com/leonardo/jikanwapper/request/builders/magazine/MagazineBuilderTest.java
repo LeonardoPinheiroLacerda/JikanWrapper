@@ -2,7 +2,7 @@ package com.leonardo.jikanwapper.request.builders.magazine;
 
 import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.maganize.MagazineData;
-import com.leonardo.jikanwapper.request.QueryParameter;
+import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.builders.JikanBuilder;
 import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;

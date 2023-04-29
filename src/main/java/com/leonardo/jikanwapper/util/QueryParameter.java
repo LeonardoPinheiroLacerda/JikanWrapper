@@ -1,4 +1,4 @@
-package com.leonardo.jikanwapper.request;
+package com.leonardo.jikanwapper.util;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

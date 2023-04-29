@@ -1,7 +1,7 @@
 package com.leonardo.jikanwapper.request.builders.genre;
 
 import com.leonardo.jikanwapper.records.genres.GenreData;
-import com.leonardo.jikanwapper.request.QueryParameter;
+import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.query_enums.GenreQueryFilter;
 import com.leonardo.jikanwapper.util.QueryParameterBuilder;

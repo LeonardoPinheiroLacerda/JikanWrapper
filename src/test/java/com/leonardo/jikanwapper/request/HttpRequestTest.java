@@ -3,6 +3,7 @@ package com.leonardo.jikanwapper.request;
 import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.exceptions.JikanRequestException;
 import com.leonardo.jikanwapper.records.genres.GenreData;
+import com.leonardo.jikanwapper.util.HttpRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

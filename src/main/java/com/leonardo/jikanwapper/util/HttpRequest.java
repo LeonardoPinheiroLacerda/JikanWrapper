@@ -1,6 +1,7 @@
-package com.leonardo.jikanwapper.request;
+package com.leonardo.jikanwapper.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.leonardo.jikanwapper.exceptions.JikanRequestException;
 
 import java.io.IOException;
@@ -14,13 +15,14 @@ public class HttpRequest {
 
         Integer statusCode = 0;
         String statusMessage = "";
+        InputStream responseStream = null;
 
         try{
             URL Url = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) Url.openConnection();
             connection.setRequestMethod("GET");
 
-            InputStream responseStream = connection.getInputStream();
+            responseStream = connection.getInputStream();
 
             statusCode = connection.getResponseCode();
             statusMessage = connection.getResponseMessage();
@@ -29,11 +31,17 @@ public class HttpRequest {
                 throw new IOException();
             }
 
-            ObjectMapper mapper = new ObjectMapper();
-
-            return mapper.readValue(responseStream, clazz);
         }catch(IOException e) {
             throw new JikanRequestException("Invalid Url, probably you made some mistake while building it. Request response data = {URL: '" + url + "', Response: '" + statusCode + " " + statusMessage + "'}");
+        }
+
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.registerModule(new JavaTimeModule());
+
+            return mapper.readValue(responseStream, clazz);
+        } catch(IOException e) {
+            throw new JikanRequestException("Couldn't serialize object", e);
         }
 
     }
