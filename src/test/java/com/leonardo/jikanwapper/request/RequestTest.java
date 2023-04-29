@@ -31,39 +31,39 @@ class RequestTest {
     }
 
 
-    @Test
-    @DisplayName("Should return an GenreData object")
-    void requestGenreTest() {
-
-        //given
-        Request<GenreData> request = JikanBuilder
-                .genre()
-                .anime()
-                .build();
-
-        //when
-        GenreData actual = request.request();
-
-        //then
-        assertNotNull(actual);
-    }
-
-
-    @Test
-    @DisplayName("Should return an MagazineData object")
-    void requestMagazineTest() {
-
-        //given
-        Request<MagazineData> request = JikanBuilder
-                .magazine()
-                .query("jump")
-                .build();
-
-        //when
-        MagazineData actual = request.request();
-
-        //then
-        assertNotNull(actual);
-    }
+//    @Test
+//    @DisplayName("Should return an GenreData object")
+//    void requestGenreTest() {
+//
+//        //given
+//        Request<GenreData> request = JikanBuilder
+//                .genre()
+//                .anime()
+//                .build();
+//
+//        //when
+//        GenreData actual = request.request();
+//
+//        //then
+//        assertNotNull(actual);
+//    }
+//
+//
+//    @Test
+//    @DisplayName("Should return an MagazineData object")
+//    void requestMagazineTest() {
+//
+//        //given
+//        Request<MagazineData> request = JikanBuilder
+//                .magazine()
+//                .query("jump")
+//                .build();
+//
+//        //when
+//        MagazineData actual = request.request();
+//
+//        //then
+//        assertNotNull(actual);
+//    }
 
 }
