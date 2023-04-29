@@ -17,7 +17,7 @@ class RecommendationQueryBuilderTest {
     void buildTest() {
 
         //given
-        String expected = JikanConstants.HOST + "/recommendations/anime";
+        String expected = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "/anime";
 
         //when
         RecommendationQueryBuilder recommendationQueryBuilder = JikanBuilder.recommendations().anime();

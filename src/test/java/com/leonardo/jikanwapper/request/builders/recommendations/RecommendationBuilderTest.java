@@ -15,7 +15,7 @@ class RecommendationBuilderTest {
     void anime() {
 
         //given
-        String expected = JikanConstants.HOST + "/recommendations/anime";
+        String expected = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "/anime";
 
         //when
         RecommendationBuilder recommendationBuilder = new RecommendationBuilder();
@@ -32,7 +32,7 @@ class RecommendationBuilderTest {
     @DisplayName("Should return RecommendationQueryBuilder with the url for manga")
     void manga() {
         //given
-        String expected = JikanConstants.HOST + "/recommendations/manga";
+        String expected = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "/manga";
 
         //when
         RecommendationBuilder recommendationBuilder = new RecommendationBuilder();

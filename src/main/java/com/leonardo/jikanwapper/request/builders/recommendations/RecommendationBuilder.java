@@ -7,7 +7,7 @@ import com.leonardo.jikanwapper.request.builders.genre.GenreQueryBuilder;
 
 public class RecommendationBuilder {
 
-    private String url = JikanConstants.HOST + "/recommendations";
+    private String url = JikanConstants.HOST + JikanConstants.RECOMMENDATION_ENDPOINT + "";
 
     public RecommendationQueryBuilder anime() {
         return new RecommendationQueryBuilder(url + "/anime");

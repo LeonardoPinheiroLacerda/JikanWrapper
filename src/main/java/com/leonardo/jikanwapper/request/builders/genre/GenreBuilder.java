@@ -4,7 +4,7 @@ import com.leonardo.jikanwapper.JikanConstants;
 
 public class GenreBuilder {
 
-    private String url = JikanConstants.HOST + "/genres";
+    private String url = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "";
 
     public GenreQueryBuilder anime() {
         return new GenreQueryBuilder(url + "/anime");

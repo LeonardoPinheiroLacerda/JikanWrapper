@@ -3,7 +3,6 @@ package com.leonardo.jikanwapper.request;
 import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.exceptions.JikanRequestException;
 import com.leonardo.jikanwapper.records.genres.GenreData;
-import com.leonardo.jikanwapper.util.HttpRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ class HttpRequestTest {
     void test() {
 
         //given
-        final String url = JikanConstants.HOST + "/genres/anime";
+        final String url = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/anime";
 
         //when
         GenreData actual = HttpRequest.get(url, GenreData.class);

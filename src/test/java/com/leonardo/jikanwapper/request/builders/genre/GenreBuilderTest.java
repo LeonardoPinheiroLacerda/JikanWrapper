@@ -13,7 +13,7 @@ class GenreBuilderTest {
     void anime() {
 
         //given
-        String expected = JikanConstants.HOST + "/genres/anime";
+        String expected = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/anime";
 
         //when
         GenreBuilder genreBuilder = new GenreBuilder();
@@ -31,7 +31,7 @@ class GenreBuilderTest {
     void manga() {
 
         //given
-        String expected = JikanConstants.HOST + "/genres/manga";
+        String expected = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/manga";
 
         //when
         GenreBuilder genreBuilder = new GenreBuilder();

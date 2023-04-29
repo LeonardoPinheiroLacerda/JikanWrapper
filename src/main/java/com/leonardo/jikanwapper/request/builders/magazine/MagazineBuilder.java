@@ -16,7 +16,7 @@ import java.util.Set;
 @Getter
 public class MagazineBuilder {
 
-    private String url = JikanConstants.HOST + "/magazines";
+    private String url = JikanConstants.HOST + JikanConstants.MAGAZINE_ENDPOINT + "";
 
     private Set<QueryParameter> queries = new HashSet<>();
 

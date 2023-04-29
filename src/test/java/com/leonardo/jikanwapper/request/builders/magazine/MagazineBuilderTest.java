@@ -90,7 +90,7 @@ class MagazineBuilderTest {
     void build() {
 
         //given
-        String expected = JikanConstants.HOST + "/magazines";
+        String expected = JikanConstants.HOST + JikanConstants.MAGAZINE_ENDPOINT + "";
 
         //when
         MagazineBuilder magazineBuilder = JikanBuilder

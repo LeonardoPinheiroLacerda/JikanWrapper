@@ -1,6 +1,5 @@
 package com.leonardo.jikanwapper.request;
 
-import com.leonardo.jikanwapper.util.HttpRequest;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

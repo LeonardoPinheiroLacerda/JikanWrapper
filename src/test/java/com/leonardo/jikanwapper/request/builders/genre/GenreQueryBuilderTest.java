@@ -18,7 +18,7 @@ class GenreQueryBuilderTest {
     void buildTest() {
 
         //given
-        String expected = JikanConstants.HOST + "/genres/anime";
+        String expected = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/anime";
 
         //when
         GenreQueryBuilder genreQueryBuilder = JikanBuilder.genre().anime();

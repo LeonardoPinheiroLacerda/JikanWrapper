@@ -21,7 +21,7 @@ class RequestTest {
                 .anime()
                 .build();
 
-        String expected = JikanConstants.HOST + "/genres/anime";
+        String expected = JikanConstants.HOST + JikanConstants.GENRE_ENDPOINT + "/anime";
 
         //when
         String actual = request.toString();
