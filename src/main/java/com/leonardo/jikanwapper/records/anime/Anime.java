@@ -5,6 +5,7 @@ import com.leonardo.jikanwapper.records.Broadcast;
 import com.leonardo.jikanwapper.records.Generic;
 import com.leonardo.jikanwapper.records.Trailer;
 import com.leonardo.jikanwapper.records.aired.Aired;
+import com.leonardo.jikanwapper.records.image.JpgWebImages;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public record Anime(
         Integer episodes,
         String status,
         Aired aired,
-        AnimeImages images,
+        JpgWebImages images,
         Trailer trailer,
         List<AnimeTitle> titles,
         Broadcast broadcast,
