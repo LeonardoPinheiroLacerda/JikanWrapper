@@ -22,14 +22,19 @@ public class HttpRequest {
             HttpURLConnection connection = (HttpURLConnection) Url.openConnection();
             connection.setRequestMethod("GET");
 
-            responseStream = connection.getInputStream();
-
             statusCode = connection.getResponseCode();
             statusMessage = connection.getResponseMessage();
 
-            if(statusCode != 200) {
+            if(statusCode == 429) {
+                try{
+                    Thread.sleep(250);
+                    return get(url, clazz);
+                }catch(InterruptedException e) {}
+            }else if(statusCode != 200) {
                 throw new IOException();
             }
+
+            responseStream = connection.getInputStream();
 
         }catch(IOException e) {
             throw new JikanRequestException("Invalid Url, probably you made some mistake while building it. Request response data = {URL: '" + url + "', Response: '" + statusCode + " " + statusMessage + "'}");
