@@ -17,7 +17,7 @@ import java.util.Set;
 @Getter
 public class MagazineBuilder implements RequestBuilder<MagazineData> {
 
-    private String url = JikanConstants.HOST + JikanConstants.MAGAZINE_ENDPOINT + "";
+    private String url = JikanConstants.HOST + JikanConstants.MAGAZINE_ENDPOINT;
 
     private Set<QueryParameter> queries = new HashSet<>();
 

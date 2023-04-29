@@ -1,8 +1,8 @@
-package com.leonardo.jikanwapper.records.recommendation;
+package com.leonardo.jikanwapper.records.anime;
 
 import com.leonardo.jikanwapper.records.image.Image;
 
-public record RecommendationImages(
+public record AnimeImages(
         Image jpg,
         Image webp
 ) {

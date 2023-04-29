@@ -1,4 +1,4 @@
-package com.leonardo.jikanwapper.records;
+package com.leonardo.jikanwapper.records.image;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 

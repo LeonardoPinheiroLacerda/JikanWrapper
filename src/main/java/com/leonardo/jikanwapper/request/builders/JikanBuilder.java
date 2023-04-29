@@ -1,5 +1,6 @@
 package com.leonardo.jikanwapper.request.builders;
 
+import com.leonardo.jikanwapper.request.builders.anime.AnimeBuilder;
 import com.leonardo.jikanwapper.request.builders.genre.GenreBuilder;
 import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
 import com.leonardo.jikanwapper.request.builders.recommendations.RecommendationBuilder;
@@ -16,6 +17,10 @@ public class JikanBuilder {
 
     public static RecommendationBuilder recommendations() {
         return new RecommendationBuilder();
+    }
+
+    public static AnimeBuilder anime() {
+        return new AnimeBuilder();
     }
 
 }
