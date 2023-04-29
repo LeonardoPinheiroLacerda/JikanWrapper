@@ -2,6 +2,7 @@ package com.leonardo.jikanwapper.request.builders.magazine;
 
 import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.maganize.MagazineData;
+import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.util.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;
@@ -14,7 +15,7 @@ import java.util.Set;
 
 
 @Getter
-public class MagazineBuilder {
+public class MagazineBuilder implements RequestBuilder<MagazineData> {
 
     private String url = JikanConstants.HOST + JikanConstants.MAGAZINE_ENDPOINT + "";
 
@@ -46,6 +47,7 @@ public class MagazineBuilder {
         return this;
     }
 
+    @Override
     public Request<MagazineData> build() {
         return new Request(this.url + QueryParameterBuilder.build(queries), MagazineData.class);
     }
