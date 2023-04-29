@@ -9,16 +9,12 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class AnimeIdBuilder implements RequestBuilder<AnimeData> {
+public class AnimeFullBuilder implements RequestBuilder<AnimeFullData> {
 
     private String url;
 
-    public AnimeFullBuilder full() {
-        return new AnimeFullBuilder(this.url + "/full");
-    }
-
     @Override
-    public Request<AnimeData> build() {
-        return new Request(this.url, AnimeData.class);
+    public Request<AnimeFullData> build() {
+        return new Request(this.url, AnimeFullData.class);
     }
 }
