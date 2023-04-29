@@ -1,5 +1,6 @@
 package com.leonardo.jikanwapper.util;
 
+import com.leonardo.jikanwapper.request.QueryParameter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,10 +16,10 @@ class QueryParameterBuilderTest {
     void test(){
 
         //given
-        Set<String> queries = new HashSet<>();
-        queries.add("order_by=name");
-        queries.add("sort=asc");
-        queries.add("q=Jump");
+        Set<QueryParameter> queries = new HashSet<>();
+        queries.add(new QueryParameter("order_by=name"));
+        queries.add(new QueryParameter("sort=asc"));
+        queries.add(new QueryParameter("q=Jump"));
 
         String expected = "?order_by=name&sort=asc&q=Jump";
 
@@ -36,7 +37,7 @@ class QueryParameterBuilderTest {
     void emptyTest(){
 
         //given
-        Set<String> queries = new HashSet<>();
+        Set<QueryParameter> queries = new HashSet<>();
 
         String expected = "";
 

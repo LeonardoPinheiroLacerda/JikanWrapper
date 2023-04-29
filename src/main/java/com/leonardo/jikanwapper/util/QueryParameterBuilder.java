@@ -1,12 +1,14 @@
 package com.leonardo.jikanwapper.util;
 
+import com.leonardo.jikanwapper.request.QueryParameter;
+
 import java.util.Set;
 
 public class QueryParameterBuilder {
 
-    public static String build(Set<String> queries) {
+    public static String build(Set<QueryParameter> queries) {
         StringBuilder queriesStr = new StringBuilder("?");
-        for(String query : queries) {
+        for(QueryParameter query : queries) {
 
             if(queriesStr.length() > 1) {
                 queriesStr.append("&");

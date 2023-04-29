@@ -1,11 +1,9 @@
 package com.leonardo.jikanwapper.request.builders.magazine;
 
-import com.leonardo.jikanwapper.records.genres.GenreData;
 import com.leonardo.jikanwapper.records.maganize.MagazineData;
+import com.leonardo.jikanwapper.request.QueryParameter;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.builders.JikanBuilder;
-import com.leonardo.jikanwapper.request.builders.genre.GenreQueryBuilder;
-import com.leonardo.jikanwapper.request.query_enums.GenreQueryFilter;
 import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;
 import com.leonardo.jikanwapper.request.query_enums.SearchQuerySort;
 import org.junit.jupiter.api.DisplayName;
@@ -26,7 +24,7 @@ class MagazineBuilderTest {
 
         //then
         assertNotNull(actual);
-        assertTrue(actual.getQueries().contains("page=1"));
+        assertTrue(actual.getQueries().contains(new QueryParameter("page=1")));
     }
 
     @Test
@@ -40,7 +38,7 @@ class MagazineBuilderTest {
 
         //then
         assertNotNull(actual);
-        assertTrue(actual.getQueries().contains("limit=1"));
+        assertTrue(actual.getQueries().contains(new QueryParameter("limit=1")));
     }
 
     @Test
@@ -54,7 +52,7 @@ class MagazineBuilderTest {
 
         //then
         assertNotNull(actual);
-        assertTrue(actual.getQueries().contains("q=jump"));
+        assertTrue(actual.getQueries().contains(new QueryParameter("q=jump")));
     }
 
     @Test
@@ -68,7 +66,7 @@ class MagazineBuilderTest {
 
         //then
         assertNotNull(actual);
-        assertTrue(actual.getQueries().contains("letter=j"));
+        assertTrue(actual.getQueries().contains(new QueryParameter("letter=j")));
     }
 
     @Test
@@ -82,8 +80,8 @@ class MagazineBuilderTest {
 
         //then
         assertNotNull(actual);
-        assertTrue(actual.getQueries().contains(MagazinesQueryOrderBy.NAME.getQuery()));
-        assertTrue(actual.getQueries().contains(SearchQuerySort.ASC.getQuery()));
+        assertTrue(actual.getQueries().contains(new QueryParameter(MagazinesQueryOrderBy.NAME.getQuery())));
+        assertTrue(actual.getQueries().contains(new QueryParameter(SearchQuerySort.ASC.getQuery())));
     }
 
     @Test
