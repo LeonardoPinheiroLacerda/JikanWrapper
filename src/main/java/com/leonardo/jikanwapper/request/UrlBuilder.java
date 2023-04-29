@@ -7,6 +7,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -14,6 +15,18 @@ import java.util.Set;
 @Getter
 public abstract class UrlBuilder {
     @NonNull
-    protected String url;
-    protected Set<QueryParameter> queries = new HashSet<>();
+    private String url;
+    private Set<QueryParameter> queries = new HashSet<>();
+
+    protected void addQuery(String expression) {
+        this.queries.add(new QueryParameter(expression));
+    }
+
+    protected void addQuery(String key, Object value) {
+        this.queries.add(new QueryParameter(key, value));
+    }
+
+    protected void addQuery(QueryParameter queryParameter) {
+        this.queries.add(queryParameter);
+    }
 }

@@ -13,11 +13,11 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
     }
 
     public AnimeFullBuilder full() {
-        return new AnimeFullBuilder(this.url + "/full");
+        return new AnimeFullBuilder(getUrl() + "/full");
     }
 
     @Override
     public Request<AnimeData> build() {
-        return new Request(this.url, AnimeData.class);
+        return new Request(getUrl(), AnimeData.class);
     }
 }

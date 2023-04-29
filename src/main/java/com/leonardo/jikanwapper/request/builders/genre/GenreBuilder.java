@@ -9,11 +9,11 @@ public class GenreBuilder extends UrlBuilder {
     }
 
     public GenreQueryBuilder anime() {
-        return new GenreQueryBuilder(url + "/anime");
+        return new GenreQueryBuilder(getUrl() + "/anime");
     }
 
     public GenreQueryBuilder manga() {
-        return new GenreQueryBuilder(url + "/manga");
+        return new GenreQueryBuilder(getUrl() + "/manga");
     }
 
 

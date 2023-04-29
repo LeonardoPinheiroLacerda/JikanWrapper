@@ -14,12 +14,12 @@ public class RecommendationQueryBuilder extends UrlBuilder implements RequestBui
     }
 
     public RecommendationQueryBuilder page(Integer page) {
-        queries.add(new QueryParameter("page", page));
+        addQuery("page", page);
         return this;
     }
 
     @Override
     public Request<RecommendationData> build() {
-        return new Request(this.url + QueryParameterBuilder.build(queries), RecommendationData.class);
+        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), RecommendationData.class);
     }
 }

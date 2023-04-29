@@ -16,13 +16,13 @@ public class GenreQueryBuilder extends UrlBuilder implements RequestBuilder<Genr
     }
 
     public GenreQueryBuilder filter(GenreQueryFilter queryParameter) {
-        this.queries.add(new QueryParameter(queryParameter.getQuery()));
+        addQuery(queryParameter.getQuery());
         return this;
     }
 
     @Override
     public Request<GenreData> build() {
-        return new Request(this.url + QueryParameterBuilder.build(queries), GenreData.class);
+        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), GenreData.class);
     }
 
 }

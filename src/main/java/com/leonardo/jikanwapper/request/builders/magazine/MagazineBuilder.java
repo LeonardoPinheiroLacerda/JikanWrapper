@@ -17,34 +17,34 @@ public class MagazineBuilder extends UrlBuilder implements RequestBuilder<Magazi
     }
 
     public MagazineBuilder page(Integer page) {
-        queries.add(new QueryParameter("page", page));
+        addQuery("page", page);
         return this;
     }
 
     public MagazineBuilder limit(Integer limit) {
-        queries.add(new QueryParameter("limit", limit));
+        addQuery("limit", limit);
         return this;
     }
 
     public MagazineBuilder query(String q) {
-        queries.add(new QueryParameter("q", q));
+        addQuery("q", q);
         return this;
     }
 
     public MagazineBuilder letter(Character letter) {
-        queries.add(new QueryParameter("letter", letter));
+        addQuery("letter", letter);
         return this;
     }
 
     public MagazineBuilder orderBy(MagazinesQueryOrderBy magazinesQueryOrderBy, SearchQuerySort searchQuerySort) {
-        queries.add(new QueryParameter(magazinesQueryOrderBy.getQuery()));
-        queries.add(new QueryParameter(searchQuerySort.getQuery()));
+        addQuery(magazinesQueryOrderBy.getQuery());
+        addQuery(searchQuerySort.getQuery());
         return this;
     }
 
     @Override
     public Request<MagazineData> build() {
-        return new Request(this.url + QueryParameterBuilder.build(queries), MagazineData.class);
+        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), MagazineData.class);
     }
 
 }

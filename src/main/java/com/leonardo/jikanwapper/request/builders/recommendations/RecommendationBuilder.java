@@ -9,11 +9,11 @@ public class RecommendationBuilder extends UrlBuilder {
     }
 
     public RecommendationQueryBuilder anime() {
-        return new RecommendationQueryBuilder(url + "/anime");
+        return new RecommendationQueryBuilder(getUrl() + "/anime");
     }
 
     public RecommendationQueryBuilder manga() {
-        return new RecommendationQueryBuilder(url + "/manga");
+        return new RecommendationQueryBuilder(getUrl() + "/manga");
     }
 
 }

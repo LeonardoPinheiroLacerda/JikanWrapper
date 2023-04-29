@@ -9,6 +9,6 @@ public class AnimeBuilder extends UrlBuilder {
     }
 
     public AnimeIdBuilder id(Integer id){
-        return new AnimeIdBuilder(url + "/" + id);
+        return new AnimeIdBuilder(getUrl() + "/" + id);
     }
 }

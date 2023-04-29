@@ -13,6 +13,6 @@ public class AnimeFullBuilder extends UrlBuilder implements RequestBuilder<Anime
 
     @Override
     public Request<AnimeFullData> build() {
-        return new Request(this.url, AnimeFullData.class);
+        return new Request(getUrl(), AnimeFullData.class);
     }
 }
