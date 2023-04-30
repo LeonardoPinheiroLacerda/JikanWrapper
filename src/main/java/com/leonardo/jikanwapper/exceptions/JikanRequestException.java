@@ -1,5 +1,8 @@
 package com.leonardo.jikanwapper.exceptions;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class JikanRequestException extends RuntimeException{
 
     public JikanRequestException(String message) {
