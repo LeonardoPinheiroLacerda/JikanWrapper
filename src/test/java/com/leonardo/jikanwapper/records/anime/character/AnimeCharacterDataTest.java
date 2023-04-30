@@ -14,11 +14,8 @@ class AnimeCharacterDataTest {
     @DisplayName("Serialization test for AnimeCharacterData")
     void serializationTest() {
 
-        //given
-        Integer id = 1;
-
         //when
-        AnimeCharacterData actual = JikanBuilder.anime().id(id).character().build().request();
+        AnimeCharacterData actual = JikanBuilder.anime().id(1).character().build().request();
 
         //then
         assertNotNull(actual);

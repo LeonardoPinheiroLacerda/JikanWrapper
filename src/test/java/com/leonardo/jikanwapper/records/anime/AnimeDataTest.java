@@ -13,11 +13,8 @@ class AnimeDataTest {
     @DisplayName("Serialization test for animeData")
     void serializationTest(){
 
-        //given
-        Integer id = 1;
-
         //when
-        AnimeData animeData = JikanBuilder.anime().id(id).build().request();
+        AnimeData animeData = JikanBuilder.anime().id(1).build().request();
 
         //then
         assertNotNull(animeData);
