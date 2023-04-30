@@ -20,6 +20,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimeCharacterBuilder(getUrl() + "/characters");
     }
 
+    public AnimeStaffBuilder staff() {
+        return new AnimeStaffBuilder(getUrl() + "/staff");
+    }
+
     @Override
     public Request<AnimeData> build() {
         return new Request(getUrl(), AnimeData.class);

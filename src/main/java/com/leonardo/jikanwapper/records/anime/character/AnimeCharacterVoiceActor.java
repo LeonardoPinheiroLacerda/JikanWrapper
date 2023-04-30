@@ -1,7 +1,9 @@
 package com.leonardo.jikanwapper.records.anime.character;
 
+import com.leonardo.jikanwapper.records.anime.AnimePerson;
+
 public record AnimeCharacterVoiceActor (
-        AnimeCharacterVoiceActorPerson person,
+        AnimePerson person,
         String language
 ){
 }

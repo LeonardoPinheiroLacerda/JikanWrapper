@@ -1,12 +1,12 @@
 package com.leonardo.jikanwapper.records.recommendation;
 
 import com.leonardo.jikanwapper.exceptions.JikanRequestException;
-import com.leonardo.jikanwapper.records.genres.GenreData;
 import com.leonardo.jikanwapper.request.builders.JikanBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class RecommendationDataTest {
     @Test

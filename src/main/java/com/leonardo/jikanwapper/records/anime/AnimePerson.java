@@ -1,9 +1,9 @@
-package com.leonardo.jikanwapper.records.anime.character;
+package com.leonardo.jikanwapper.records.anime;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.leonardo.jikanwapper.records.image.JpgImageUrl;
 
-public record AnimeCharacterVoiceActorPerson(
+public record AnimePerson(
         @JsonAlias("mal_id")
         Integer malId,
         String url,
