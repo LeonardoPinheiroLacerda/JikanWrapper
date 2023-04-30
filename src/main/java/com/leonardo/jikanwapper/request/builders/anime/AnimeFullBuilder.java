@@ -10,7 +10,6 @@ public class AnimeFullBuilder extends UrlBuilder implements RequestBuilder<Anime
     public AnimeFullBuilder(String url) {
         super(url);
     }
-
     @Override
     public Request<AnimeFullData> build() {
         return new Request(getUrl(), AnimeFullData.class);
