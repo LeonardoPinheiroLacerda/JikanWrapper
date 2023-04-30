@@ -2,13 +2,13 @@ package com.leonardo.jikanwapper.request.builders.anime;
 
 import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.anime.character.AnimeCharacterData;
-import com.leonardo.jikanwapper.records.anime.full.AnimeFullData;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.builders.JikanBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class AnimeCharacterBuilderTest {
 
