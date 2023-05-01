@@ -87,4 +87,19 @@ class AnimeIdBuilderTest {
         assertEquals(expected, actual.getUrl());
 
     }
+
+    @Test
+    @DisplayName("Should return an animeNewsBuilder with the correct url")
+    void newsTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/news";
+
+        //when
+        AnimeNewsBuilder actual = JikanBuilder.anime().id(1).news();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
 }
