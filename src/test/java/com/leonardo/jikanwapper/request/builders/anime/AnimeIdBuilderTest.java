@@ -117,4 +117,19 @@ class AnimeIdBuilderTest {
         assertEquals(expected, actual.getUrl());
 
     }
+
+    @Test
+    @DisplayName("Should return an animeVideoBuilder with the correct url")
+    void videoTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/videos";
+
+        //when
+        AnimeVideoBuilder actual = JikanBuilder.anime().id(1).videos();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
 }
