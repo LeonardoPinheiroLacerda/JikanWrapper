@@ -6,9 +6,6 @@ import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.request.UrlBuilder;
 import com.leonardo.jikanwapper.request.query_enums.MagazinesQueryOrderBy;
 import com.leonardo.jikanwapper.request.query_enums.SearchQuerySort;
-import com.leonardo.jikanwapper.util.QueryParameter;
-import com.leonardo.jikanwapper.util.QueryParameterBuilder;
-
 
 public class MagazineBuilder extends UrlBuilder implements RequestBuilder<MagazineData> {
 

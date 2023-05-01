@@ -4,7 +4,6 @@ import com.leonardo.jikanwapper.records.anime.episode.AnimeEpisodeData;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.request.UrlBuilder;
-import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 
 public class AnimeEpisodeBuilder extends UrlBuilder implements RequestBuilder<AnimeEpisodeData> {
 

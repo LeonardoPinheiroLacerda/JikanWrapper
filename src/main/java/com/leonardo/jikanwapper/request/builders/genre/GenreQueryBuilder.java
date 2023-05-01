@@ -5,9 +5,6 @@ import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.request.UrlBuilder;
 import com.leonardo.jikanwapper.request.query_enums.GenreQueryFilter;
-import com.leonardo.jikanwapper.util.QueryParameter;
-import com.leonardo.jikanwapper.util.QueryParameterBuilder;
-
 
 public class GenreQueryBuilder extends UrlBuilder implements RequestBuilder<GenreData> {
 
