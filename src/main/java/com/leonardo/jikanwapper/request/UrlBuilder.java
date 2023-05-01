@@ -1,6 +1,7 @@
 package com.leonardo.jikanwapper.request;
 
 import com.leonardo.jikanwapper.util.QueryParameter;
+import com.leonardo.jikanwapper.util.QueryParameterBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
@@ -28,5 +29,9 @@ public abstract class UrlBuilder {
 
     protected void addQuery(QueryParameter queryParameter) {
         this.queries.add(queryParameter);
+    }
+
+    public String getUrl() {
+        return this.url + QueryParameterBuilder.build(this.queries);
     }
 }

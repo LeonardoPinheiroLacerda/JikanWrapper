@@ -22,7 +22,7 @@ public class GenreQueryBuilder extends UrlBuilder implements RequestBuilder<Genr
 
     @Override
     public Request<GenreData> build() {
-        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), GenreData.class);
+        return new Request(getUrl(), GenreData.class);
     }
 
 }

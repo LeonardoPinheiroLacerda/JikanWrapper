@@ -23,6 +23,6 @@ public class AnimeEpisodeBuilder extends UrlBuilder implements RequestBuilder<An
 
     @Override
     public Request<AnimeEpisodeData> build() {
-        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), AnimeEpisodeData.class);
+        return new Request(getUrl(), AnimeEpisodeData.class);
     }
 }

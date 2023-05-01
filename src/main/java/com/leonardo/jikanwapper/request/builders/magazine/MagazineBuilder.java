@@ -44,7 +44,7 @@ public class MagazineBuilder extends UrlBuilder implements RequestBuilder<Magazi
 
     @Override
     public Request<MagazineData> build() {
-        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), MagazineData.class);
+        return new Request(getUrl(), MagazineData.class);
     }
 
 }

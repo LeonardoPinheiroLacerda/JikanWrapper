@@ -20,6 +20,6 @@ public class RecommendationQueryBuilder extends UrlBuilder implements RequestBui
 
     @Override
     public Request<RecommendationData> build() {
-        return new Request(getUrl() + QueryParameterBuilder.build(getQueries()), RecommendationData.class);
+        return new Request(getUrl(), RecommendationData.class);
     }
 }
