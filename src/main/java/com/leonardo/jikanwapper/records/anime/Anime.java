@@ -24,7 +24,7 @@ public record Anime(
         Boolean airing,
         String duration,
         String rating,
-        Double score,
+        Float score,
         @JsonAlias("scored_by")
         Integer scoredBy,
         Integer rank,

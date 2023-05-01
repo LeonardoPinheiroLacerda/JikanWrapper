@@ -24,6 +24,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimeStaffBuilder(getUrl() + "/staff");
     }
 
+    public AnimeEpisodeBuilder episodes() {
+        return new AnimeEpisodeBuilder(getUrl() + "/episodes");
+    }
+
     @Override
     public Request<AnimeData> build() {
         return new Request(getUrl(), AnimeData.class);
