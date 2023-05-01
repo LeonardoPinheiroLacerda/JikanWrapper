@@ -28,6 +28,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimeEpisodeBuilder(getUrl() + "/episodes");
     }
 
+    public AnimeForumBuilder forum() {
+        return new AnimeForumBuilder(getUrl() + "/forum");
+    }
+
     public AnimeNewsBuilder news() {
         return new AnimeNewsBuilder(getUrl() + "/news");
     }

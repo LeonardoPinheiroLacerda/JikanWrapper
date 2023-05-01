@@ -1,13 +1,12 @@
-package com.leonardo.jikanwapper.records.anime.news;
+package com.leonardo.jikanwapper.records.anime.forum;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.leonardo.jikanwapper.JikanConstants;
-import com.leonardo.jikanwapper.records.image.JpgImageUrl;
 
 import java.time.LocalDateTime;
 
-public record AnimeNews(
+public record AnimeForum (
         @JsonAlias("mal_id")
         Integer malId,
         String url,
@@ -18,10 +17,8 @@ public record AnimeNews(
         String authorUsername,
         @JsonAlias("author_url")
         String authorUrl,
-        @JsonAlias("forum_url")
-        String forumUrl,
-        JpgImageUrl images,
         Integer comments,
-        String excerpt
-) {
+        @JsonAlias("last_comment")
+        AnimeForumLastComment lastComment
+){
 }

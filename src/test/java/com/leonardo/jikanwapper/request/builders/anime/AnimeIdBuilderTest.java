@@ -102,4 +102,19 @@ class AnimeIdBuilderTest {
         assertEquals(expected, actual.getUrl());
 
     }
+
+    @Test
+    @DisplayName("Should return an animeForumBuilder with the correct url")
+    void forumTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/forum";
+
+        //when
+        AnimeForumBuilder actual = JikanBuilder.anime().id(1).forum();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
 }
