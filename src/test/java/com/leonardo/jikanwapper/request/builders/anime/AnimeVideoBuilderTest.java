@@ -28,4 +28,19 @@ class AnimeVideoBuilderTest {
 
     }
 
+    @Test
+    @DisplayName("Should return an animeVideoEpisodeBuilder with the correct url")
+    void episodesTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/videos/episodes";
+
+        //when
+        AnimeVideoEpisodesBuilder actual = JikanBuilder.anime().id(1).videos().episodes();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
+
 }

@@ -11,6 +11,10 @@ public class AnimeVideoBuilder extends UrlBuilder implements RequestBuilder<Anim
         super(url);
     }
 
+    public AnimeVideoEpisodesBuilder episodes() {
+        return new AnimeVideoEpisodesBuilder(getUrl() + "/episodes");
+    }
+
     @Override
     public Request<AnimeVideoData> build() {
         return new Request(getUrl(), AnimeVideoData.class);
