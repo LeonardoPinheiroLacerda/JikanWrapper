@@ -44,6 +44,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimePictureBuilder(getUrl() + "/pictures");
     }
 
+    public AnimeStatisticsBuilder statistics() {
+        return new AnimeStatisticsBuilder(getUrl() + "/statistics");
+    }
+
     @Override
     public Request<AnimeData> build() {
         return new Request(getUrl(), AnimeData.class);
