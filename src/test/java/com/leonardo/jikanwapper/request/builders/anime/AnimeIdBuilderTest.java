@@ -177,4 +177,19 @@ class AnimeIdBuilderTest {
         assertEquals(expected, actual.getUrl());
 
     }
+
+    @Test
+    @DisplayName("Should return an animeRecommendationsoBuilder with the correct url")
+    void recommendationsTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/recommendations";
+
+        //when
+        AnimeRecommendationsBuilder actual = JikanBuilder.anime().id(1).recommendations();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
 }
