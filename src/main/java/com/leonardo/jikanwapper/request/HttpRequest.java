@@ -20,6 +20,7 @@ public class HttpRequest {
         try{
             URL Url = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) Url.openConnection();
+            connection.setConnectTimeout(2000);
             connection.setRequestMethod("GET");
 
             statusCode = connection.getResponseCode();
