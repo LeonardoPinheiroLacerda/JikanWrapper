@@ -10,6 +10,36 @@ public class AnimeSearchBuilder extends UrlBuilder implements RequestBuilder<Ani
         super(url);
     }
 
+    public AnimeSearchBuilder page(Integer page) {
+        addQuery("page", page);
+        return this;
+    }
+
+    public AnimeSearchBuilder limit(Integer limit) {
+        addQuery("limit", limit);
+        return this;
+    }
+
+    public AnimeSearchBuilder q(String q) {
+        addQuery("q", q);
+        return this;
+    }
+
+    public AnimeSearchBuilder minScore(Float minScore) {
+        addQuery("min_score", minScore);
+        return this;
+    }
+
+    public AnimeSearchBuilder maxScore(Float maxScore) {
+        addQuery("max_score", maxScore);
+        return this;
+    }
+
+    public AnimeSearchBuilder letter(Character letter) {
+        addQuery("letter", letter);
+        return this;
+    }
+
     @Override
     public Request<AnimeSearchData> build() {
         return new Request(getUrl(), AnimeSearchData.class);
