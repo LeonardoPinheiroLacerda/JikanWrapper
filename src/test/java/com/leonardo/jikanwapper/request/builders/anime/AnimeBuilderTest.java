@@ -21,4 +21,17 @@ class AnimeBuilderTest {
         //then
         assertEquals(expected, actual.getUrl());
     }
+
+    @Test
+    @DisplayName("Should return an AnimeSearch with the expected url")
+    void searchTest() {
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT;
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder.anime().search();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+    }
 }

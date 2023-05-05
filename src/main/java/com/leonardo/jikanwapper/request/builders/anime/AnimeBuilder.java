@@ -11,4 +11,8 @@ public class AnimeBuilder extends UrlBuilder {
     public AnimeIdBuilder id(Integer id){
         return new AnimeIdBuilder(getUrl() + "/" + id);
     }
+
+    public AnimeSearchBuilder search() {
+        return new AnimeSearchBuilder(getUrl());
+    }
 }
