@@ -68,6 +68,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimeThemesBuilder(getUrl() + "/themes");
     }
 
+    public AnimeExternalBuilder external() {
+        return new AnimeExternalBuilder(getUrl() + "/external");
+    }
+
     @Override
     public Request<AnimeData> build() {
         return new Request(getUrl(), AnimeData.class);
