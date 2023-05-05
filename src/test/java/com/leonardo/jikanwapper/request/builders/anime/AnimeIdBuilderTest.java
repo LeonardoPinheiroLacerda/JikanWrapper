@@ -207,4 +207,19 @@ class AnimeIdBuilderTest {
         assertEquals(expected, actual.getUrl());
 
     }
+
+    @Test
+    @DisplayName("Should return an animeRelationsBuilder with the correct url")
+    void relationsTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/relations";
+
+        //when
+        AnimeRelationsBuilder actual = JikanBuilder.anime().id(1).relations();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
 }

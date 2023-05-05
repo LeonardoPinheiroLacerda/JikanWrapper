@@ -60,6 +60,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimeReviewBuilder(getUrl() + "/reviews");
     }
 
+    public AnimeRelationsBuilder relations() {
+        return new AnimeRelationsBuilder(getUrl() + "/relations");
+    }
+
     @Override
     public Request<AnimeData> build() {
         return new Request(getUrl(), AnimeData.class);
