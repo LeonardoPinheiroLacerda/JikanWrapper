@@ -5,6 +5,8 @@ import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.request.UrlBuilder;
 
+import java.time.LocalDate;
+
 public class AnimeSearchBuilder extends UrlBuilder implements RequestBuilder<AnimeSearchData> {
     public AnimeSearchBuilder(String url) {
         super(url);
@@ -37,6 +39,16 @@ public class AnimeSearchBuilder extends UrlBuilder implements RequestBuilder<Ani
 
     public AnimeSearchBuilder letter(Character letter) {
         addQuery("letter", letter);
+        return this;
+    }
+
+    public AnimeSearchBuilder startDate(LocalDate startDate) {
+        addQuery("start_date", startDate);
+        return this;
+    }
+
+    public AnimeSearchBuilder endDate(LocalDate endDate) {
+        addQuery("end_date", endDate);
         return this;
     }
 

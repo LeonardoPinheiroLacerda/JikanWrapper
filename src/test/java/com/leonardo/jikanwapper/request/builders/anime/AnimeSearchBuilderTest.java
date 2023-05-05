@@ -4,10 +4,11 @@ import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.anime.search.AnimeSearchData;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.builders.JikanBuilder;
-import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
 import com.leonardo.jikanwapper.util.QueryParameter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -119,6 +120,35 @@ class AnimeSearchBuilderTest {
         assertTrue(actual.getQueries().contains(new QueryParameter("letter=a")));
     }
 
+    @Test
+    @DisplayName("Should add start_date query parameter")
+    void startDate() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .startDate(LocalDate.of(2023, 1, 1));
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter("start_date=2023-1-1")));
+    }
+
+    @Test
+    @DisplayName("Should add end_date query parameter")
+    void endDate() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .endDate(LocalDate.of(2023, 1, 1));
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter("end_date=2023-1-1")));
+    }
 
 
 }
