@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -148,6 +149,51 @@ class AnimeSearchBuilderTest {
         //then
         assertNotNull(actual);
         assertTrue(actual.getQueries().contains(new QueryParameter("end_date=2023-1-1")));
+    }
+
+    @Test
+    @DisplayName("Should add genres query parameter")
+    void genres() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .genres(Arrays.asList(1, 2, 3));
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter("genres=1,2,3")));
+    }
+
+    @Test
+    @DisplayName("Should add genres_exclude query parameter")
+    void genresExcludes() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .genresExclude(Arrays.asList(1, 2, 3));
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter("genres_exclude=1,2,3")));
+    }
+
+    @Test
+    @DisplayName("Should add producers query parameter")
+    void producers() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .producers(Arrays.asList(1, 2, 3));
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter("producers=1,2,3")));
     }
 
 

@@ -6,6 +6,8 @@ import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.request.UrlBuilder;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class AnimeSearchBuilder extends UrlBuilder implements RequestBuilder<AnimeSearchData> {
     public AnimeSearchBuilder(String url) {
@@ -49,6 +51,45 @@ public class AnimeSearchBuilder extends UrlBuilder implements RequestBuilder<Ani
 
     public AnimeSearchBuilder endDate(LocalDate endDate) {
         addQuery("end_date", endDate);
+        return this;
+    }
+
+    public AnimeSearchBuilder genres(List<Integer> genresId) {
+        addQuery(
+                "genres",
+                String.join(",",
+                        genresId
+                                .stream()
+                                .map(item -> item.toString())
+                                .collect(Collectors.toList())
+                )
+        );
+        return this;
+    }
+
+    public AnimeSearchBuilder genresExclude(List<Integer> genresExcludeId) {
+        addQuery(
+                "genres_exclude",
+                String.join(",",
+                        genresExcludeId
+                                .stream()
+                                .map(item -> item.toString())
+                                .collect(Collectors.toList())
+                )
+        );
+        return this;
+    }
+
+    public AnimeSearchBuilder producers(List<Integer> producersId) {
+        addQuery(
+                "producers",
+                String.join(",",
+                        producersId
+                                .stream()
+                                .map(item -> item.toString())
+                                .collect(Collectors.toList())
+                )
+        );
         return this;
     }
 
