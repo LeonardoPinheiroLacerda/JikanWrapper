@@ -72,6 +72,10 @@ public class AnimeIdBuilder extends UrlBuilder implements RequestBuilder<AnimeDa
         return new AnimeExternalBuilder(getUrl() + "/external");
     }
 
+    public AnimeStreamingBuilder streaming() {
+        return new AnimeStreamingBuilder(getUrl() + "/streaming");
+    }
+
     @Override
     public Request<AnimeData> build() {
         return new Request(getUrl(), AnimeData.class);
