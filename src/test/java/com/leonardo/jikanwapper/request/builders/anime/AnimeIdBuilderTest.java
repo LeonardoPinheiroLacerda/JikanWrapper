@@ -222,4 +222,19 @@ class AnimeIdBuilderTest {
         assertEquals(expected, actual.getUrl());
 
     }
+
+    @Test
+    @DisplayName("Should return an animeThemesBuilder with the correct url")
+    void themesTest() {
+
+        //given
+        String expected = JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT + "/1/themes";
+
+        //when
+        AnimeThemesBuilder actual = JikanBuilder.anime().id(1).themes();
+
+        //then
+        assertEquals(expected, actual.getUrl());
+
+    }
 }
