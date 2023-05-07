@@ -4,6 +4,8 @@ import com.leonardo.jikanwapper.records.anime.search.AnimeSearchData;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.RequestBuilder;
 import com.leonardo.jikanwapper.request.UrlBuilder;
+import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
+import com.leonardo.jikanwapper.request.query_enums.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -92,6 +94,28 @@ public class AnimeSearchBuilder extends UrlBuilder implements RequestBuilder<Ani
         );
         return this;
     }
+
+    public AnimeSearchBuilder type(AnimeSearchQueryType type) {
+        addQuery(type.getQuery());
+        return this;
+    }
+
+    public AnimeSearchBuilder status(AnimeSearchQueryStatus status) {
+        addQuery(status.getQuery());
+        return this;
+    }
+
+    public AnimeSearchBuilder rating(AnimeSearchQueryRating rating) {
+        addQuery(rating.getQuery());
+        return this;
+    }
+
+    public AnimeSearchBuilder orderBy(AnimeSearchQueryOrderBy orderBy, SearchQuerySort sort) {
+        addQuery(orderBy.getQuery());
+        addQuery(sort.getQuery());
+        return this;
+    }
+
 
     @Override
     public Request<AnimeSearchData> build() {

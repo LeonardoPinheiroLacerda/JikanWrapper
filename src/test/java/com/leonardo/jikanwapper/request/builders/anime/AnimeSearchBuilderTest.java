@@ -4,6 +4,7 @@ import com.leonardo.jikanwapper.JikanConstants;
 import com.leonardo.jikanwapper.records.anime.search.AnimeSearchData;
 import com.leonardo.jikanwapper.request.Request;
 import com.leonardo.jikanwapper.request.builders.JikanBuilder;
+import com.leonardo.jikanwapper.request.query_enums.*;
 import com.leonardo.jikanwapper.util.QueryParameter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -194,6 +195,68 @@ class AnimeSearchBuilderTest {
         //then
         assertNotNull(actual);
         assertTrue(actual.getQueries().contains(new QueryParameter("producers=1,2,3")));
+    }
+
+
+    @Test
+    @DisplayName("Should add type query parameter")
+    void type() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .type(AnimeSearchQueryType.TV);
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter(AnimeSearchQueryType.TV.getQuery())));
+    }
+
+    @Test
+    @DisplayName("Should add status query parameter")
+    void status() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .status(AnimeSearchQueryStatus.AIRING);
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter(AnimeSearchQueryStatus.AIRING.getQuery())));
+    }
+
+    @Test
+    @DisplayName("Should add rating query parameter")
+    void rating() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .rating(AnimeSearchQueryRating.G);
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter(AnimeSearchQueryRating.G.getQuery())));
+    }
+
+    @Test
+    @DisplayName("Should add order_by and sort query parameters")
+    void orderBy() {
+
+        //when
+        AnimeSearchBuilder actual = JikanBuilder
+                .anime()
+                .search()
+                .orderBy(AnimeSearchQueryOrderBy.EPISODES, SearchQuerySort.ASC);
+
+        //then
+        assertNotNull(actual);
+        assertTrue(actual.getQueries().contains(new QueryParameter(AnimeSearchQueryOrderBy.EPISODES.getQuery())));
+        assertTrue(actual.getQueries().contains(new QueryParameter(SearchQuerySort.ASC.getQuery())));
     }
 
 
