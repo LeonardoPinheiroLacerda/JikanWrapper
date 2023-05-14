@@ -5,6 +5,7 @@ import com.leonardo.jikanwapper.request.builders.anime.AnimeBuilder;
 import com.leonardo.jikanwapper.request.builders.genre.GenreBuilder;
 import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
 import com.leonardo.jikanwapper.request.builders.recommendations.RecommendationBuilder;
+import com.leonardo.jikanwapper.request.builders.schedule.ScheduleBuilder;
 
 public class JikanBuilder {
 
@@ -22,6 +23,10 @@ public class JikanBuilder {
 
     public static AnimeBuilder anime() {
         return new AnimeBuilder(JikanConstants.HOST + JikanConstants.ANIME_ENDPOINT);
+    }
+
+    public static ScheduleBuilder schedule() {
+        return new ScheduleBuilder(JikanConstants.HOST + JikanConstants.SCHEDULE_ENDPOINT);
     }
 
 }

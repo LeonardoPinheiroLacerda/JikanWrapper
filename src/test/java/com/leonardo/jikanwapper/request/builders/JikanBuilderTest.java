@@ -4,6 +4,7 @@ import com.leonardo.jikanwapper.request.builders.anime.AnimeBuilder;
 import com.leonardo.jikanwapper.request.builders.genre.GenreBuilder;
 import com.leonardo.jikanwapper.request.builders.magazine.MagazineBuilder;
 import com.leonardo.jikanwapper.request.builders.recommendations.RecommendationBuilder;
+import com.leonardo.jikanwapper.request.builders.schedule.ScheduleBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -46,6 +47,16 @@ class JikanBuilderTest {
     void anime() {
         //when
         AnimeBuilder builder = JikanBuilder.anime();
+
+        //then
+        assertNotNull(builder);
+    }
+
+    @Test
+    @DisplayName("Should return a ScheduleBuilder")
+    void schedule() {
+        //when
+        ScheduleBuilder builder = JikanBuilder.schedule();
 
         //then
         assertNotNull(builder);
